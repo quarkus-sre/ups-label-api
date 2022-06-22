@@ -17,7 +17,7 @@ import com.redhat.quarkus.ups.domain.Order;
 @Path("/ups")
 public class UPSService {
 
-  @ConfigProperty(name="label.delay", defaultValue = "10000")
+  @ConfigProperty(name="label.delay", defaultValue = "2000")
   long delay;
 
   @POST
