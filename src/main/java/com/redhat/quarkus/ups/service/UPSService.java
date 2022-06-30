@@ -1,6 +1,7 @@
 package com.redhat.quarkus.ups.service;
 
 import java.time.LocalDate;
+import java.util.Random;
 import java.util.UUID;
 
 import javax.ws.rs.Consumes;
@@ -20,12 +21,17 @@ public class UPSService {
   @ConfigProperty(name="label.delay", defaultValue = "2000")
   long delay;
 
+  int minDelay = 1500;
+  int maxDelay = 3000;
+  
   @POST
   @Path("/createlabel")
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)
   public Label createLabel(Order order) throws InterruptedException {
     System.out.println("Label generated -> "+UUID.randomUUID().toString());
+    delay = (int) ((Math.random() * (maxDelay - minDelay)) + minDelay);
+    System.out.println("UPS Delay -> "+ delay);
     Thread.sleep(delay);
     return new Label(UUID.randomUUID().toString(), LocalDate.now());
   }
