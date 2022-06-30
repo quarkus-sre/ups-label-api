@@ -21,8 +21,8 @@ public class UPSService {
   @ConfigProperty(name="label.delay", defaultValue = "2000")
   long delay;
 
-  int minDelay = 1500;
-  int maxDelay = 3000;
+  int minDelay = 300;
+  int maxDelay = 2000;
   
   @POST
   @Path("/createlabel")
