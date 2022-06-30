@@ -21,7 +21,7 @@ public class UPSService {
   long delay;
 
   int minDelay = 300;
-  int maxDelay = 2000;
+  int maxDelay = 1000;
   
   @POST
   @Path("/createlabel")
