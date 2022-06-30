@@ -1,7 +1,6 @@
 package com.redhat.quarkus.ups.service;
 
 import java.time.LocalDate;
-import java.util.Random;
 import java.util.UUID;
 
 import javax.ws.rs.Consumes;
